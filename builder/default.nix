@@ -14,11 +14,11 @@
 in {
   buildGleamApplication = {
     src,
+    elixir,
     nativeBuildInputs ? [],
     localPackages ? [],
     erlangPackage ? erlang,
     rebar3Package ? rebar3,
-    elixirP ? elixir,
     ...
   } @ attrs: let
     # gleam.toml contains an application name and version.
