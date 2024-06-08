@@ -18,6 +18,7 @@ in {
     localPackages ? [],
     erlangPackage ? erlang,
     rebar3Package ? rebar3,
+    elixirP ? elixir,
     ...
   } @ attrs: let
     # gleam.toml contains an application name and version.
@@ -137,7 +138,7 @@ in {
         nativeBuildInputs =
           defaultNativeBuildInputs
           ++ [erlangPackage rebar3Package]
-          ++ (lib.optional needsElixir [elixir])
+          ++ (lib.optional needsElixir [elixirP])
           ++ nativeBuildInputs;
 
         # The gleam compiler has a nice export function for erlang shipment.
